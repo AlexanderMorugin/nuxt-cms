@@ -1,0 +1,94 @@
+:root {
+  --text-color-primary: #1c2536;
+  --text-color-primary-active: #f9fafb;
+  --text-color-secondary: #6b7280;
+  --text-color-red: #f04438;
+  --text-color-white: #ffffff;
+  --text-color-black: #1c2536;
+
+  --bg: #ffffff;
+  --bg-inverse: #111827;
+  --bg-inverse-secondary: #4f4f50;
+  --bg-secondary: #fde047;
+  --bg-white: #ffffff;
+
+  --border-color: #e5e7eb;
+  --border-color-inverse: #d5d6d6;
+
+  --btn-bg-primary: #ffffff;
+  --btn-bg-primary-active: #111827;
+
+  --btn-arrow: #ffffff;
+
+  --screen-desktop: 1440px;
+  --screen-notebook: 1279px;
+  --screen-large-tablet: 1023px;
+  --screen-tablet: 767px;
+  --screen-mobile: 575px;
+
+  --header-height: 96px;
+
+  // --grey-primary: #eeeeee;
+  // --grey-dark-primary: #343a3f;
+  // --grey-dark-secondary: #5f5f5f;
+  // --blue-light-primary: #edf3fa;
+  --blue-primary: #d2e5fd;
+  // --blue-secondary: #819ac1;
+  --blue-dark-primary: #5b6e8c;
+  --blue-dark-secondary: #004c90;
+  --blue-dark-thirdly: #00011f;
+  // --blue-dark-fourth: #111927;
+
+  --purple-primary: #6366f1;
+  --purple-secondary: #4447f7;
+
+  --green-primary: #00c950;
+  --green-secondary: #009689;
+  --green-thirdly: #cbfbf1;
+
+  // --green-primary: #cbfbf1;
+  // --green-secondary: #009689;
+  // --green-thirdly: #00bba7;
+  // --green-fourthly: #00786f;
+  // --green-fifthly: #00a63e;
+  // --green-sixthly: #00c950;
+  // --green-seventhly: #008236;
+  // --green-eighthly: #009689;
+
+  --gradient-green-primary: linear-gradient(135deg, var(--green-primary) 0%, var(--green-secondary) 100%);
+  --gradient-green-secondary: linear-gradient(135deg, var(--green-primary) 50%, var(--green-secondary) 100%);
+
+  --gradient-purple-primary: linear-gradient(135deg, var(--purple-primary) 0%, var(--purple-secondary) 100%);
+  --gradient-purple-secondary: linear-gradient(135deg, var(--purple-primary) 50%, var(--purple-secondary) 100%);
+}
+
+.dark-mode {
+  --text-color-primary: #f9fafb;
+  --text-color-primary-active: #1c2536;
+  --text-color-secondary: #9ca3af;
+  --text-color-red: #f04438;
+  --text-color-white: #ffffff;
+  --text-color-black: #1c2536;
+
+  --bg: #111827;
+  --bg-inverse: #ffffff;
+  --bg-secondary: #1d4ed8;
+  --bg-white: #ffffff;
+
+  --border-color: #0d2538;
+  --border-color-inverse: #d5d6d6;
+
+  --btn-bg-primary: #111827;
+  --btn-bg-primary-active: #ffffff;
+  --btn-color-white: #ffffff;
+
+  --btn-arrow: #00011f;
+
+  // --blue-primary: #d2e5fd;
+
+  // --green-primary: #00c950;
+  // --green-secondary: #00a63e;
+
+  // --gradient-btn-login-primary: linear-gradient(135deg, var(--green-primary) 0%, var(--green-secondary) 100%);
+  // --gradient-btn-login-secondary: linear-gradient(135deg, var(--green-primary) 50%, var(--green-secondary) 100%);
+}
