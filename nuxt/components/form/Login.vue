@@ -2,65 +2,27 @@
   <form class="form-auth" @submit.prevent="submitLoginForm">
     <FormTitle title="Логин" />
 
+    <!-- Поле ввода почты -->
     <FormInput
-      label="Электронная почта"
       type="email"
       name="emailField"
-      placeholder="example@email.com"
+      placeholder="Электронная почта"
       v-model:value="v$.emailField.$model"
       :error="v$.emailField.$errors"
       @clearInput="emailField = null"
       @click="clearErrorMessage"
     />
 
-    <!-- Поле ввода почты -->
-    <!-- <div class="form-field">
-      <input
-        type="email"
-        id="emailField"
-        name="emailField"
-        placeholder="Почта"
-        v-model.lazy="v$.emailField.$model"
-        :class="[
-          'form-input',
-          { 'form-input-warning': v$.emailField.$errors.length },
-        ]"
-      /> -->
-    <!-- Показывается ошибка, если таковая имеется -->
-    <!-- <span
-        v-for="item in v$.emailField.$errors"
-        :key="item.$uid"
-        class="form-input-error"
-        >{{ item.$message }}</span
-      > -->
-
-    <!-- Очистка инпута по нажатию на крестик -->
-    <!-- <FormClear v-if="emailField" @clearInput="emailField = null" /> -->
-    <!-- </div> -->
-
     <!-- Поле ввода пароль -->
-    <div class="form-field">
-      <input
-        type="password"
-        id="passwordField"
-        name="passwordField"
-        placeholder="Пароль"
-        v-model="v$.passwordField.$model"
-        :class="[
-          'form-input',
-          { 'form-input-warning': v$.passwordField.$errors.length },
-        ]"
-      />
-      <!-- Показывается ошибка, если таковая имеется -->
-      <span
-        v-for="item in v$.passwordField.$errors"
-        :key="item.$uid"
-        class="form-input-error"
-        >{{ item.$message }}</span
-      >
-      <!-- Очистка инпута по нажатию на крестик -->
-      <FormClear v-if="passwordField" @clearInput="passwordField = null" />
-    </div>
+    <FormInput
+      type="password"
+      name="passwordField"
+      placeholder="Пароль"
+      v-model:value="v$.passwordField.$model"
+      :error="v$.passwordField.$errors"
+      @clearInput="passwordField = null"
+      @click="clearErrorMessage"
+    />
 
     <!-- Кнопка Сабмит -->
     <FormSubmit

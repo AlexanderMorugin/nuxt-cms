@@ -7,5 +7,5 @@ export default defineNuxtConfig({
     "~/assets/scss/_fonts.scss",
     "~/assets/scss/_form.scss",
   ],
-  modules: ["@nuxtjs/color-mode", "nuxt-toast"],
+  modules: ["@nuxtjs/color-mode"],
 });

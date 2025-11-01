@@ -1,7 +1,5 @@
 <template>
   <div class="form-field">
-    <label :for="name" class="form-label">{{ label }}</label>
-
     <input
       :type="type"
       :id="name"
@@ -9,7 +7,7 @@
       :placeholder="placeholder"
       :value="value"
       @input="updateValue"
-      class="form-input"
+      :class="['form-input', { 'form-input-warning': error.length }]"
     />
 
     <!-- Показывается ошибка, если таковая имеется -->
@@ -23,9 +21,14 @@
 </template>
 
 <script setup>
-const { label, type, name, placeholder, value, error, lastInput } = defineProps(
-  ["label", "type", "name", "placeholder", "value", "error", "lastInput"]
-);
+const { label, type, name, placeholder, value, error } = defineProps([
+  "label",
+  "type",
+  "name",
+  "placeholder",
+  "value",
+  "error",
+]);
 
 const emit = defineEmits(["update:value", "clearInput"]);
 

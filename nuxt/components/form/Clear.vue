@@ -12,7 +12,10 @@ const emit = defineEmits(["clearInput"]);
 .clearInput {
   position: absolute;
   top: 0;
-  right: 4px;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 35px;
   height: 100%;
 
