@@ -24,6 +24,12 @@
       @click="clearErrorMessage"
     />
 
+    <!-- Появляющийся текст ошибки -->
+    <FormErrorMessage
+      v-if="loginUserErrorMessage"
+      :text="loginUserErrorMessage"
+    />
+
     <!-- Кнопка Сабмит -->
     <FormSubmit
       :isFromEmpty="isFromEmpty"
@@ -32,6 +38,8 @@
       text="Войти"
     />
   </form>
+
+  {{ user }}
 </template>
 
 <script setup>
@@ -44,6 +52,8 @@ const isLoading = ref(false);
 
 const emailField = ref(null);
 const passwordField = ref(null);
+const loginUserErrorMessage = ref(null);
+const user = ref(null);
 
 // Валидация
 const rules = computed(() => ({
@@ -71,9 +81,7 @@ const isValid = computed(() => v$.value.$errors);
 
 // Сабмит
 const submitLoginForm = async () => {
-  // const { login } = useAuth();
-
-  isLoading.value = true;
+  isLoading.value = false;
 
   const loginData = {
     email: emailField.value.trim(),
@@ -81,11 +89,18 @@ const submitLoginForm = async () => {
   };
 
   try {
-    // await login(loginData);
+    isLoading.value = true;
 
-    // router.push("/dashboard");
+    const { data } = await useFetch("/api/auth/login", {
+      method: "POST",
+      body: JSON.stringify(loginData),
+    });
 
-    console.log(loginData);
+    console.log(data.value);
+
+    user.value = data.value;
+
+    router.push("/dashboard");
   } catch (error) {
     console.log("Login.vue-error: ", error);
   } finally {
