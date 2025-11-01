@@ -1,0 +1,21 @@
+
+
+services:
+  nginx:
+    depends_on:
+      - nuxt
+    image: nginx:stable-alpine
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./logs:/var/log/nginx/
+    restart: always
+
+  nuxt:
+    build: ./nuxt
+    environment:
+      DATABASE_URL: postgresql://admin:Cosmos1973@193.227.240.14:5432/madde_db?schema=public
+    expose:
+      - '3000'
+    restart: always
